@@ -1,0 +1,27 @@
+.outer{
+    margin-top: 50px;
+    margin-left: 700px;
+    width: 420px;
+    height: 700px;
+    border-width: 3px;
+    border-style: solid;
+    padding: 5px;
+}
+.screen{
+    border-width: 2px;
+    border-style: solid;
+    margin-top: 3px;
+    margin-left: 3px;
+    width: 395px;
+    height: 180px;
+}
+.btn{
+    width: 100px;
+    height: 104px;
+    font-size: 40px;
+}
+.btn1{
+    width: 100px;
+    height: 208px;
+    font-size: 40px;
+}
