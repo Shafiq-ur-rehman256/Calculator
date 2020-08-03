@@ -7,40 +7,132 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Calculator By Shafiq</h1>
+    <h1>Calculator</h1>
     <form class="outer">
-        <input type="number" class="screen" >
+        <input type="text" class="screen" id="numbers">
         <table>
 
             <tr>
-                <td><input type="button" class="btn" value="C"></td>
-                <td><input type="button" class="btn" value="/"></td>
-                <td><input type="button" class="btn" value="*"></td>
-                <td><input type="button" class="btn" value="-"></td>
+                <td><input type="button" class="btn" value="C" onclick="clr()"></td>
+                <td><input type="button" class="btn" value="/" onclick="divid()"></td>
+                <td><input type="button" class="btn" value="*" onclick="mul()"></td>
+                <td><input type="button" class="btn" value="-" onclick="sub()"></td>
             </tr>
             <tr>
-                <td><input type="button" class="btn" value="7"></td>
-                <td><input type="button" class="btn" value="8"></td>
-                <td><input type="button" class="btn" value="9"></td>
-                <td rowspan="2"><input type="button" class="btn1" value="+"></td>
+                <td><input type="button" class="btn" value="7" onclick="addsegment(id)" id="seg7"></td>
+                <td><input type="button" class="btn" value="8" onclick="addsegment(id)" id="seg8"></td>
+                <td><input type="button" class="btn" value="9" onclick="addsegment(id)" id="seg9"></td>
+                <td rowspan="2"><input type="button" class="btn1" value="+" onclick="addi()"></td>
             </tr>
             <tr>
-                <td><input type="button" class="btn" value="4"></td>
-                <td><input type="button" class="btn" value="5"></td>
-                <td><input type="button" class="btn" value="6"></td>
+                <td><input type="button" class="btn" value="4" onclick="addsegment(id)" id="seg4"></td>
+                <td><input type="button" class="btn" value="5" onclick="addsegment(id)" id="seg5"></td>
+                <td><input type="button" class="btn" value="6" onclick="addsegment(id)" id="seg6"></td>
             </tr>
             <tr>
-                <td><input type="button" class="btn" value="1"></td>
-                <td><input type="button" class="btn" value="2"></td>
-                <td><input type="button" class="btn" value="3"></td>
-                <td rowspan="2"><input type="button" class="btn1" value="="></td>
+                <td><input type="button" class="btn" value="1" onclick="addsegment(id)" id="seg1"></td>
+                <td><input type="button" class="btn" value="2" onclick="addsegment(id)" id="seg2"></td>
+                <td><input type="button" class="btn" value="3" onclick="addsegment(id)" id="seg3"></td>
+                <td rowspan="2"><input type="button" class="btn1" value="=" onclick="operation()"></td>
             </tr>
             <tr>
-                <td colspan="2"><input type="button" class="btn2" value="0"></td>
-                <td><input type="button" class="btn" value="."></td>
+                <td colspan="2"><input type="button" class="btn2" value="0" onclick="addsegment(id)" id="seg0"></td>
+                <td><input type="button" class="btn" value="." onclick="addsegment(id)" id="seg."></td>
             </tr>
 
         </table>
     </form>
+    <script>
+        function divid(){
+            var count =0;
+            var screenValue = document.getElementById("numbers").value;
+            for (let i = 0; i < screenValue.length; i++) {
+                if (screenValue[i]=== "/"){
+                    count += 1;
+                }   
+            }
+            if(count === 0 ){
+                document.getElementById("numbers").value += "/";
+            }
+        
+        }
+        function mul(){
+            var count =0;
+            var screenValue = document.getElementById("numbers").value;
+            for (let i = 0; i < screenValue.length; i++) {
+                if (screenValue[i]=== "*"){
+                    count += 1;
+                }   
+            }
+            if(count === 0 ){
+                document.getElementById("numbers").value += "*";
+            }
+        
+        }
+        function sub(){
+            var count =0;
+            var screenValue = document.getElementById("numbers").value;
+            for (let i = 0; i < screenValue.length; i++) {
+                if (screenValue[i]=== "-"){
+                    count += 1;
+                }   
+            }
+            if(count === 0 ){
+                document.getElementById("numbers").value += "-";
+            }
+        
+        }
+        function addi(){
+            var count =0;
+            var screenValue = document.getElementById("numbers").value;
+            for (let i = 0; i < screenValue.length; i++) {
+                if (screenValue[i]=== "+"){
+                    count += 1;
+                }   
+            }
+            if(count === 0 ){
+                document.getElementById("numbers").value += "+";
+            }
+        
+        }        
+
+        function addsegment(id){
+            var keyVal = document.getElementById(id).value;
+            document.getElementById("numbers").value += keyVal;
+        }
+        function clr(){
+            document.getElementById("numbers").value ="";
+        }
+        function operation(){
+           var readValue = document.getElementById("numbers").value;
+           var len = readValue.length
+           for(let i = 0 ; i<len ; i++ )
+           {
+               if(readValue[i] === "+" || readValue[i]=== "-" || readValue[i]=== "*" || readValue[i]=== "/"){
+                   var getOperator = readValue[i];
+                   var firstOperand = parseInt(readValue.slice(0,i));
+                   var secondOperand = parseInt(readValue.slice(i+1,len+1));
+                   switch (getOperator) {
+                       case "+":
+                           var result = firstOperand + secondOperand;
+                           document.getElementById("numbers").value = result;
+                           break;
+                        case "-":
+                           var result = firstOperand - secondOperand;
+                           document.getElementById("numbers").value = result;
+                           break;
+                        case "*":
+                           var result = firstOperand * secondOperand;
+                           document.getElementById("numbers").value = result;
+                           break;
+                        case "/":
+                           var result = firstOperand / secondOperand;
+                           document.getElementById("numbers").value = result;
+                           break;
+                   }
+               }
+           }
+        }
+    </script>
 </body>
 </html>
