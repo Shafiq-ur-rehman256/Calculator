@@ -8,25 +8,39 @@
 </head>
 <body>
     <h1>Calculator By Shafiq</h1>
-    <div class="outer">
-        <input type="number" class="screen" id="screen1">
-        <input type="button" class="btn" value="C">
-        <input type="button" class="btn" value="/">
-        <input type="button" class="btn" value="*">
-        <input type="button" class="btn" value="-">
-        <input type="button" class="btn" value="7">
-        <input type="button" class="btn" value="8">
-        <input type="button" class="btn" value="9">
-        <input type="button" class="btn1" value="+">
-        <input type="button" class="btn" value="4">
-        <input type="button" class="btn" value="5">
-        <input type="button" class="btn" value="6">
-        <input type="button"class="btn1" value="=">
-        <input type="button" class="btn" value="1">
-        <input type="button" class="btn" value="2">
-        <input type="button" class="btn" value="3">
-        <input type="button" value="0">
-        <input type="button" class="btn" value=".">
-    </div>
+    <form class="outer">
+        <input type="number" class="screen" >
+        <table>
+
+            <tr>
+                <td><input type="button" class="btn" value="C"></td>
+                <td><input type="button" class="btn" value="/"></td>
+                <td><input type="button" class="btn" value="*"></td>
+                <td><input type="button" class="btn" value="-"></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="btn" value="7"></td>
+                <td><input type="button" class="btn" value="8"></td>
+                <td><input type="button" class="btn" value="9"></td>
+                <td rowspan="2"><input type="button" class="btn1" value="+"></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="btn" value="4"></td>
+                <td><input type="button" class="btn" value="5"></td>
+                <td><input type="button" class="btn" value="6"></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="btn" value="1"></td>
+                <td><input type="button" class="btn" value="2"></td>
+                <td><input type="button" class="btn" value="3"></td>
+                <td rowspan="2"><input type="button" class="btn1" value="="></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" class="btn2" value="0"></td>
+                <td><input type="button" class="btn" value="."></td>
+            </tr>
+
+        </table>
+    </form>
 </body>
 </html>
