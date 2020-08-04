@@ -30,4 +30,4 @@ jobs:
     - name: Installing surge
       run: npm install --global surge
     - name: Deploying using surge
-      run: surge ./ Shafiq__calculator.surge.sh --token ${{ secrets.SECURITY_TOKEN }}
+      run: surge /Desktop/Web Development/Calculator Shafiq__calculator.surge.sh --token ${{ secrets.SECURITY_TOKEN }}
