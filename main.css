@@ -18,7 +18,6 @@
     width: 100px;
     height: 104px;
     font-size: 400px;
-    background-color:purple;
 }
 .btn1{
     width: 100px;
@@ -29,4 +28,7 @@
     width: 200px;
     height: 104px;
     font-size: 40px;
+}
+body{
+    background-color: black;
 }
